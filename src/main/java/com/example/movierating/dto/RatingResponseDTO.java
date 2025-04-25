@@ -1,6 +1,5 @@
 package com.example.movierating.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data

@@ -8,6 +8,7 @@ class MovieratingApplicationTests {
 
 	@Test
 	void contextLoads() {
+		//auto generated method
 	}
 
 }

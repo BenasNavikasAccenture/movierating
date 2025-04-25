@@ -23,4 +23,8 @@ public class MovieMapper {
         movie.setDescription(dto.getDescription());
         return movie;
     }
+
+    private MovieMapper() {
+        throw new UnsupportedOperationException("Utility class should not be instantiated");
+    }
 }

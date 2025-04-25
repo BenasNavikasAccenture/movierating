@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class RatingIntegrationTests {
+class RatingIntegrationTests {
 
     @Autowired
     private MockMvc mockMvc;

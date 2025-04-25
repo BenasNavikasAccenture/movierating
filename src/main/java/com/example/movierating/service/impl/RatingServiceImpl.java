@@ -9,19 +9,21 @@ import com.example.movierating.repository.MovieRepository;
 import com.example.movierating.repository.RatingRepository;
 import com.example.movierating.repository.UserRepository;
 import com.example.movierating.service.RatingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class RatingServiceImpl implements RatingService {
-    @Autowired
-    private RatingRepository ratingRepository;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private MovieRepository movieRepository;
+    private final RatingRepository ratingRepository;
+    private final UserRepository userRepository;
+    private final MovieRepository movieRepository;
+
+    public RatingServiceImpl(RatingRepository ratingRepository, UserRepository userRepository, MovieRepository movieRepository) {
+        this.ratingRepository = ratingRepository;
+        this.userRepository = userRepository;
+        this.movieRepository = movieRepository;
+    }
 
     @Override
     public RatingResponseDTO rateMovie(RatingRequestDTO dto) {

@@ -5,7 +5,6 @@ import com.example.movierating.mapper.MovieMapper;
 import com.example.movierating.model.Movie;
 import com.example.movierating.repository.MovieRepository;
 import com.example.movierating.service.MovieService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +12,11 @@ import java.util.stream.Collectors;
 
 @Service
 public class MovieServiceImpl implements MovieService {
+    private final MovieRepository movieRepository;
 
-    @Autowired
-    private MovieRepository movieRepository;
+    public MovieServiceImpl(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
 
     @Override
     public List<MovieDTO> getAllMovies() {

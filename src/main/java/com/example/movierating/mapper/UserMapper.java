@@ -17,4 +17,8 @@ public class UserMapper {
         user.setUsername(dto.getUsername());
         return user;
     }
+
+    private UserMapper() {
+        throw new UnsupportedOperationException("Utility class should not be instantiated");
+    }
 }
