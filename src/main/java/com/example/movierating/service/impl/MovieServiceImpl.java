@@ -8,7 +8,6 @@ import com.example.movierating.service.MovieService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class MovieServiceImpl implements MovieService {
@@ -23,7 +22,7 @@ public class MovieServiceImpl implements MovieService {
         return movieRepository.findAll()
                 .stream()
                 .map(MovieMapper::toDTO)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
